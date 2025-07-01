@@ -1,9 +1,11 @@
 # Task-6
 
+
 CREATE TABLE Departments (
     department_id INT PRIMARY KEY,
     department_name VARCHAR(50)
 );
+
 
 CREATE TABLE Employees (
     id INT PRIMARY KEY,
@@ -31,12 +33,21 @@ INSERT INTO Employees (id, name, department_id, salary) VALUES
 (107, 'Grace', 5, 52000),
 (108, 'Heidi', 5, 53000),
 (109, 'Ivan', 2, 51000);
+
+
+
+
+
 SELECT 
     name,
     (SELECT department_name 
      FROM Departments 
      WHERE Departments.department_id = Employees.department_id) AS dept_name
 FROM Employees;
+
+
+
+
 SELECT name 
 FROM Employees 
 WHERE department_id IN (
@@ -44,6 +55,9 @@ WHERE department_id IN (
     FROM Departments 
     WHERE department_name LIKE 'S%'
 );
+
+
+
 SELECT dept.department_name, avg_salaries.avg_salary
 FROM (
     SELECT department_id, AVG(salary) AS avg_salary
@@ -51,6 +65,9 @@ FROM (
     GROUP BY department_id
 ) AS avg_salaries
 JOIN Departments AS dept ON dept.department_id = avg_salaries.department_id;
+
+
+
 SELECT name 
 FROM Employees E1
 WHERE salary > (
