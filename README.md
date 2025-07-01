@@ -6,7 +6,6 @@ CREATE TABLE Departments (
     department_name VARCHAR(50)
 );
 
-
 CREATE TABLE Employees (
     id INT PRIMARY KEY,
     name VARCHAR(50),
