@@ -1,6 +1,5 @@
 # Task-6
 
--- Create Departments Table
 CREATE TABLE Departments (
     department_id INT PRIMARY KEY,
     department_name VARCHAR(50)
